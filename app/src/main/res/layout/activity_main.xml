@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quote"
+            type="com.example.quoteapp.Quote" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/purple_500"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:rotation="180"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_baseline_format_quote_24" />
+
+        <TextView
+            tools:text="The man who does not read good books has no advantage over the man who cannot read them."
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/quoteTextView"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{quote.quote}" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_baseline_format_quote_24" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            tools:text="Abraham Lincoln"
+            android:id="@+id/quoteAuthorTextView"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:text="@{quote.quoteAuthor}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+                android:adjustViewBounds="true"
+                android:layout_width="30dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:text="Previous"
+                android:gravity="left"
+                android:id="@+id/previousButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_weight="1"
+                android:text="Next"
+                android:textSize="20sp"
+                android:gravity="right"
+                android:id="@+id/nextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:adjustViewBounds="true"
+                android:layout_height="match_parent"
+                android:rotation="180"
+                android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
